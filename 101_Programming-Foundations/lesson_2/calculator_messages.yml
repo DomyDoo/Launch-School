@@ -1,0 +1,23 @@
+# calculator_messages.yml
+
+en:
+  welcome: "Welcome to Calculator! Enter your name:"
+  valid_name: "Make sure to enter a valid name."
+  number1_prompt: "What's the first number?"
+  number2_prompt: "What's the second number?"
+  valid_integer: "Hmm... that doesn't look like a valid number.  Make sure the number is an integer."
+  operator_prompt: "What operation would you like to perform?\n\t1) add\n\t2) subtract\n\t3) multiply\n\t4) divide\n"
+  valid_operator: "Must choose 1, 2, 3, or 4"
+  another_calc: "Do you want to perform another calculation? (Y to calculate again)"
+  goodbye: "Thank you for using the calculator. Goodbye!"
+
+es:
+  welcome: "Bienvenido a Calculadora! Introduzca su nombre:"
+  valid_name: "Asegúrate de ingresar un nombre válido."
+  number1_prompt: "¿Cuál es el primer número?"
+  number2_prompt: "¿Cuál es el segundo número?"
+  valid_integer: "Hmm ... eso no se ve como un número válido. Asegúrate de que el número sea un número entero."
+  operator_prompt: "¿Qué operación te gustaría realizar?\n\t1) agregar\n\t2) sustraer\n\t3) multiplicar\n\t4) dividir\n"
+  valid_operator: "Debe elegir 1, 2, 3 o 4"
+  another_calc: "¿Desea realizar otro cálculo? (Y para calcular nuevamente)"
+  goodbye: "Gracias por usar la calculadora. ¡Adiós!"
