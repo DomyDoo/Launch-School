@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/LineLength
 
 WINNING_LINES = [[1, 2, 3], [4, 5, 6], [7, 8, 9]] +    # winning rows
                 [[1, 4, 7], [2, 5, 8], [3, 6, 9]] +    # winning columns
@@ -160,11 +161,11 @@ end
 
 def match_winner?(player_score, computer_score)
   if player_score == 5
-    return true
+    true
   elsif computer_score == 5
-    return true
+    true
   else
-    return false
+    false
   end
 end
 
@@ -214,36 +215,12 @@ loop do
       prompt "Push enter for next round."
       gets
     end
-
-
   end
 
-    prompt "\nThe winner of the match is #{winner}!!!\n"
-    prompt "Would you like to play again? (Y/n)"
-    answer = gets.chomp
-    break unless answer.downcase.start_with?('y')
+  prompt "\nThe winner of the match is #{winner}!!!\n"
+  prompt "Would you like to play again? (Y/n)"
+  answer = gets.chomp
+  break unless answer.downcase.start_with?('y')
 end
 
 prompt "Thanks for playing Tic-Tac-Toe! Goodbye!"
-
-
-# board1 = {1=>'O', 2=>'O', 3=>' ',
-#           4=>' ', 5=>' ', 6=>' ',
-#           7=>' ', 8=>' ', 9=>' '}
-
-# board2 = {1=>'O', 2=>' ', 3=>' ',
-#           4=>' ', 5=>'O', 6=>' ',
-#           7=>' ', 8=>' ', 9=>' '}
-
-# board3 = {1=>' ', 2=>'O', 3=>' ',
-#           4=>' ', 5=>'O', 6=>' ',
-#           7=>' ', 8=>' ', 9=>' '}
-
-# board4 = {1=>' ', 2=>' ', 3=>' ',
-#           4=>' ', 5=>' ', 6=>' ',
-#           7=>' ', 8=>'O', 9=>'O'}
-
-# puts detect_winning_move(board1)    # true and 3
-# puts detect_winning_move(board2)    # true and 9
-# puts detect_winning_move(board3)    # true and 8
-# puts detect_winning_move(board4)    # true and 7

@@ -2,6 +2,8 @@
 
 VALUES = %w[2 3 4 5 6 7 8 9 10 Jack Queen King Ace]
 SUIT = %w[Hearts Diamonds Clubs Spades]
+MAX_POINT = 21
+MIN_DEALER_POINT = 17
 
 def prompt(mess)
   puts "=> #{mess}"
@@ -41,7 +43,7 @@ def total_value(hand)
   end
 
   value_arr.select { |value| value == "Ace" }.count.times do
-    sum -= 10 if sum > 21
+    sum -= 10 if sum > MAX_POINT
   end
   sum
 end
@@ -75,20 +77,20 @@ def hit(deck, hand)
 end
 
 def bust?(hand)
-  total_value(hand) > 21
+  total_value(hand) > MAX_POINT
 end
 
 def dealer_done?(dealer_hand)
-  total_value(dealer_hand) >= 17
+  total_value(dealer_hand) >= MIN_DEALER_POINT
 end
 
 def detect_result(dealer_hand, player_hand)
   player_total = total_value(player_hand)
   dealer_total = total_value(dealer_hand)
 
-  if player_total > 21
+  if player_total > MAX_POINT
     :player_busted
-  elsif dealer_total > 21
+  elsif dealer_total > MAX_POINT
     :dealer_busted
   elsif dealer_total < player_total
     :player
@@ -116,8 +118,11 @@ def display_result(dealer_hand, player_hand)
   end
 end
 
-prompt "Welcome to 21!"
+player_wins = 0
+dealer_wins = 0
 loop do
+  prompt "Welcome to #{MAX_POINT}!"
+
   loop do
     prompt "Please wait while we deal the hand..."
     sleep 1
